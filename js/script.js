@@ -48,6 +48,11 @@ function guess(){
     else if(isNaN(userInput) && userInput.length === 1){
         guessedLetters.push(userInput);
         document.getElementsByClassName("instructions")[0].innerHTML = "NOPE! " + userInput.toUpperCase() + " is not one of the letters!";
+        guessRemain--;
+        if(guessRemain = 0){
+            document.getElementsByClassName("game-over")[0].innerHTML =  "Game Over!"
+
+        }
         for(j = 0; j < word.length; j++){
             if(word[j] === userInput){
                 puzzleArray[j] === userInput;
@@ -57,8 +62,6 @@ function guess(){
                 document.getElementsByClassName("instructions")[0].innerHTML = "You live for now!";
                 if(lettersRemain === 0){
                     document.getElementsByClassName("instructions")[0].innerHTML = "You have escaped the hangman!";
-                    // if (guessRemain >= 6)
-                    // document.getElementsByClassName("game-over")[0].innerHTML =  "Game Over!"
                 }
             }
         }
