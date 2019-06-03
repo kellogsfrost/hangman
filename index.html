@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hangman</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+<header></header>
+<main>
+    <h1>The Hangman</h1>
+    <div class="main-page">
+        <button onclick="reset()" class="reset"><p>Reset</p></button>
+        <div class="guess-box">
+            <p class="instructions">Guess and click the button</p>
+    </div>
+    <div class="answer-box">
+    <p class="answer">------</p>
+</div>
+    <div class="input-wrap">
+     <input type="text" id="user-input" value="">
+     <div onclick="guess()" class="guess-but"><p>Guess</p></div>
+</main>
+<footer></footer>
+<script src="js/script.js"></script>
+</body>
+</html>
