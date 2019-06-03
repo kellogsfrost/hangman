@@ -39,9 +39,9 @@ function guess(){
     guessedOnce = contains(userInput,guessedLetters);
     if(guessedOnce === true){
         document.getElementsByClassName('instructions')[0].innerHTML = "You have guessed this before silly! " + userInput.toUpperCase();
-    }
-    else if(lettersRemain === 0){
-        document.getElementsByClassName("instructions")[0].innerHTML = "You have escaped the hangman!";
+    // }
+    // else if(lettersRemain === 0){
+    //     document.getElementsByClassName("instructions")[0].innerHTML = "You have escaped the hangman!";
     }
     else if(isNaN(userInput) && userInput.length === 1){
         guessedLetters.push(userInput);
@@ -62,7 +62,7 @@ function guess(){
     else{
         document.getElementsByClassName("instructions")[0].innerHTML = "Please guess a single letter.";
 }
-var userInput = document.getElementById("user-input").value = "";
+var user = document.getElementById("user-input").value = "";
     }
 
 

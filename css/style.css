@@ -25,7 +25,7 @@ html{
     border-radius: 5px;
     margin: 10px;
   }
-  .input-wrap{
+  .input-box{
     width: 110px;
     display: flex;
     flex-flow: row;
