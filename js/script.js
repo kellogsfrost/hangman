@@ -1,20 +1,20 @@
 
-
+//variables 
 var randomWord = ["globe","lamp","crab","coast","tree","monkey","purple"];
 var word = randomWord[Math.floor(Math.random()*randomWord.length)];
 var puzzleArray = [];
 var guessRemain = 6;
-var lettersRemain = randomWord.length;
+var lettersRemain = word.length;
 var guessedLetters = []
 for(i = 0; i < word.length; i++){
     puzzleArray[i] = "_";
 };
 var guessedOnce = 0;
 var answerToDisplay = puzzleArray.join(" ");
-document.getElementsByClassName('answer')[0].innerHTML = answerToDisplay;
-
-function contains(thing, array){
-    if(array.indexOf(thing) > -1){
+document.getElementsByClassName("answer")[0].innerHTML = answerToDisplay;
+// game functions
+function contains(userInput, guessedLetters){
+    if(guessedLetters.indexOf(userInput) > -1){
         return true;
     }
     else{
@@ -34,6 +34,8 @@ function reset(){
     answerToDisplay = puzzleArray.join(" ");
     document.getElementsByClassName("answer")[0].innerHTML = answerToDisplay;
 }
+
+
 function guess(){
     var userInput = document.getElementById("user-input").value;
     guessedOnce = contains(userInput,guessedLetters);
@@ -55,6 +57,8 @@ function guess(){
                 document.getElementsByClassName("instructions")[0].innerHTML = "You live for now!";
                 if(lettersRemain === 0){
                     document.getElementsByClassName("instructions")[0].innerHTML = "You have escaped the hangman!";
+                    // if (guessRemain >= 6)
+                    // document.getElementsByClassName("game-over")[0].innerHTML =  "Game Over!"
                 }
             }
         }
@@ -64,22 +68,13 @@ function guess(){
 }
 var user = document.getElementById("user-input").value = "";
     }
+//i think i'm trying to do to much with the guess function. Need a guess function and a win and lose function seperate.
+console.log(guessRemain);
+console.log(lettersRemain);
+console.log(puzzleArray);
+console.log(answerToDisplay);
+console.log(word);
 
-
-
-
-
-
-
-// HTML elemeent references
-
-
-
-// Create all event listeners
-
-
-
-// Any additional functions
 
 
 
